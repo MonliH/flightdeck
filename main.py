@@ -73,7 +73,7 @@ prompt = """Here's a bunch of projects that won hackathons that are similar to m
 Here's my idea:
 {user_project}
 
-Help me make a writeup that uses ideas from the winning teams but keeps my idea the same. Only write the hackathon writeup. Put things in code tags that are key to winning. Keep the writeup easy and fun to read. Start with a title."""
+Help me make a writeup that uses ideas from the winning teams but keeps my idea the same. Only write the hackathon writeup. Put important ideas in bold. Keep the writeup easy and fun to read. Start with a title."""
 
 
 class Suggestion(BaseModel):
