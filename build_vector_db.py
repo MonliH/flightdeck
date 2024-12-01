@@ -27,7 +27,7 @@ embeddings = CohereEmbeddings(cohere_api_key=api_key,
 documents = []
 project_id_to_data = {}
 award_mapping = json.load(open("output/awards_mapping.json", "r"))
-with open("output/projects_parsed_final.jsonl", "r") as file:
+with open("output/projects_parsed_deduped.jsonl", "r") as file:
     for line in file:
         data = json.loads(line)
         id_data = str(uuid.uuid4())

@@ -70,3 +70,19 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+.markdown h1 {
+  @apply text-xl font-bold;
+}
+
+.markdown h2 {
+  @apply text-lg font-bold my-3;
+}
+
+.markdown p {
+  @apply text-sm my-3;
+}
+
+.markdown pre {
+  @apply inline-block p-2 bg-blue-200;
+}
