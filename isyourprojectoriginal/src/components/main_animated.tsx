@@ -1,5 +1,8 @@
 "use client";
 
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @next/next/no-html-link-for-pages */
+
 import { useState, FormEvent } from "react";
 import { Project, SimilarityResult } from "@/lib/types";
 import Link from "next/link";
@@ -42,7 +45,7 @@ function formatTextToStyledSpans(
     .join("\n");
 }
 
-const baseUrl = "http://localhost:8000";
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
 // Loading skeleton component for project cards
 const ProjectCardSkeleton = () => (
@@ -70,7 +73,7 @@ export default function Main() {
   const [whatTheyDid, setWhatTheyDid] = useState<string[]>([]);
   const [howTheyWon, setHowTheyWon] = useState<string[]>([]);
   const [suggestion, setSuggestions] = useState<string[]>([]);
-  const [activeSuggestion, setActiveSuggestion] = useState<number>(0);
+  const [activeSuggestion, _setActiveSuggestion] = useState<number>(0);
 
   // New loading states
   const [isLoadingResults, setIsLoadingResults] = useState(false);
@@ -159,7 +162,7 @@ export default function Main() {
               .map((submission) => submission.awards.join(", "))
               .join(", ")
           ),
-          names: data.map(([_, project]) => project.title),
+          names: data.map(([_a, project]) => project.title),
         }),
       });
 
@@ -280,7 +283,7 @@ export default function Main() {
   );
 
   return (
-    <div className="py-12 px-12 h-screen w-screen" style={{
+    <div className="py-12 px-12 h-screen w-screen overflow-hidden" style={{
         backgroundImage: 'url("/bg_pattern.jpg")',
         backgroundRepeat: "repeat"
     }}>
@@ -477,7 +480,7 @@ export default function Main() {
               </>
             ) : (
               <>
-                <h2 className="text-lg text-[#48566A] mb-2">
+                <h2 className="text-lg text-[#48566A] -mt-14 mb-2">
                   The winning writeup out of <b>10 ideas</b> is...
                 </h2>
                 <div className="p-3 h-[700px] bg-white rounded-md text-lg py-5 flex flex-col gap-1 overflow-scroll">

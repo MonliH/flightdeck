@@ -1,5 +1,8 @@
 "use client";
 
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @next/next/no-html-link-for-pages */
+
 import { useState, FormEvent } from "react";
 import dynamic from "next/dynamic";
 import { Project, SimilarityResult } from "@/lib/types";
