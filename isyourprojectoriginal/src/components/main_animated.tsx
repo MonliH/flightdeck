@@ -96,7 +96,8 @@ export default function Main() {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-        },
+          "ngrok-skip-browser-warning": true
+        } as any,
         body: JSON.stringify({
           document_or_link: input,
           k: 3,
@@ -126,7 +127,8 @@ export default function Main() {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-        },
+          "ngrok-skip-browser-warning": true
+        } as any,
         body: JSON.stringify({
           documents: data.map(
             ([, project]) => project.parsed_content.description_markdown
@@ -152,7 +154,8 @@ export default function Main() {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-        },
+          "ngrok-skip-browser-warning": true
+        } as any,
         body: JSON.stringify({
           documents: data.map(
             ([, project]) => project.parsed_content.description_markdown
@@ -207,7 +210,8 @@ export default function Main() {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-        },
+          "ngrok-skip-browser-warning": true
+        } as any,
         body: JSON.stringify({
           project_doc: input,
         }),
